@@ -2,12 +2,12 @@
 	
 	require ('../conexion.php');
 	
-	$id_estado = $_POST['id_estado'];
+	$idProv = $_POST['idProv'];
 	
-	$queryM = "SELECT idProv, provincia FROM ubprovincia WHERE idDepa = '$id_estado' ORDER BY provincia";
+	$queryM = "SELECT idDist, distrito FROM ubdistrito WHERE idProv = '$idProv' ORDER BY distrito";
 	$resultadoM = $mysqli->query($queryM);
 	
-	$html= "<option value='0'>Seleccionar Provincia</option>";
+	$html= "<option value='0'>Seleccionar Distrito</option>";
 	
 	while($rowM = $resultadoM->fetch_assoc())
 	{
